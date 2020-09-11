@@ -1,0 +1,17 @@
+vscode extension
+1. Python
+2. Live server
+3. Material icon Theme
+4. Auto renamd tag
+5. html css support
+6. html to css auto compile
+7. css peek
+8. Bracket pair colorizer
+9. Indent-Rainbow
+10. waka time
+11. mark down all in one
+
++
+1. Auto prefixer
+2. Rest client
+3. Polacode
