@@ -1,0 +1,7 @@
+Display : block, inline, inline-block
+
+Position (기본값 static) 
+- relative : 원래의 위치에서 이동
+- absolute : 담겨있는 상자를 기준
+- fixed : 상자가 아닌 페이지 상에서
+- sticky : 스크롤해도 그대로 위치
