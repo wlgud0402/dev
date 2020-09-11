@@ -1,0 +1,20 @@
+flexbox : Container, item
+          중심축, 반대축 (수평, 수직)
+
+.Container
+    display : flexbox
+    flex-direction : row, column
+    flex-wrap : wrap (요소가 아래로 줄바꿈됨), nowrap (줄바꿈되지않고 작아지는 채로 유지)
+
+    justify-content : 기준선 (start, end, center)
+
+    align-items
+    align-self
+
+    space-around
+    space-evenly
+
+    flex-grow : 창이 움직이면 item도 움직임
+    flex-shrink : 줄어드는 속도
+    flex-basis : % 별로 조절 가능
+
