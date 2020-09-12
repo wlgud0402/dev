@@ -16,6 +16,7 @@ def boards_by_user(request):
 
 
 def board(request):
+    # 내부적으로 시행하지만 join과는 원칙적으로 다르다. 많은 select문의 실행
     boards_with_no_related = Board.objects.all()
 
     boards = Board.objects \
