@@ -5,54 +5,23 @@ from django.http import HttpResponse
 import json
 
 
-# Create your views here.
-
 def boards_by_user(request):
     try:
         user = User.objects.get(id=request.GET.get('id'))
-        posts = user.post_set.all()
+        # (1:N)유저가 여러개의 글을 썼을경우 => 그 유저의 글들을 가져온다. 유저.글들_set.all()
+        boards = user.board_set.all()
     except ObjectDoesNotExist:
         return HttpResponse("do not exist user")
     return render(request, 'board/list_by_user.html', {"user": user, "boards": boards})
 
 
-def boards(request):
-    # try:
-    #     user = User.objects.get(id=request.GET.get('id'))
-    # except ObjectDoesNotExist:
-    #     return HttpResponse("do not exist user")
-
-    # boards = Board.objects.all()
-    # return render(request, 'board/list.html', { "boards": boards })
+def board(request):
+    boards_with_no_related = Board.objects.all()
 
     boards = Board.objects \
         .select_related('user') \
         # .filter(user=user)
-    return render(request, 'board/list.html', {"boards": boards})
-
-
-def board(request):
-    try:
-        board = Board.objects.get(id=request.GET.get('id'))
-    except ObjectDoesNotExist:
-        return HttpResponse('do not exist post')
-    return render(request, 'board/one.html', {"board": board})
-
-
-def write(request):
-    title = request.GET.get('title')
-    content = request.GET.get('content')
-    try:
-        user = User.objects.get(id=2)
-    except ObjectDoesNotExist:
-        return HttpResponse("do not exist user")
-    board = Board(user=user, title=title, content=content)
-    board.save()
-    return HttpResponse("success")
-
-
-def join(request):
-    name = request.GET.get('name')
-    user = User(name=name)
-    user.save()
-    return HttpResponse("success")
+    return render(request, 'board/list.html', {
+        "boards": boards,
+        "boards_with_no_related": boards_with_no_related
+    })
