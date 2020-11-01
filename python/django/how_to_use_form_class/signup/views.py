@@ -5,7 +5,7 @@ from django.template import RequestContext
 
 
 def signup(request):
-    return render(request, 'how_to_use_form_class/signup.html')
+    return render(request, 'signup/signup.html')
 
 
 def register_page(request):
@@ -25,4 +25,4 @@ def register_page(request):
         #     'form': form
         # })
 
-        return render(request, '/Users/wlgud/Documents/dev/python/django/how_to_use_form_class/how_to_use_form_class/register.html', {'form': form})
+        return render(request, 'signup/register.html', {'form': form})
