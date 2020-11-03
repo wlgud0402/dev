@@ -14,7 +14,7 @@ def Blank():
 Blank()
 
 
-def None():
+def isNone():
     b = None
     if b:
         print("Not Blank")
@@ -25,3 +25,6 @@ def None():
         print("None")
     else:
         print("Not None")
+
+
+isNone()
