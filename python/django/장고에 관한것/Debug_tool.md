@@ -39,6 +39,8 @@
 
 ### 프로젝트의 urls.py 설정 변경
 
+urls.py에 추가 (기존 urlpatterns 아래에 넣어야함)
+
 ```python
 from django.contrib import admin
 from django.urls import path, include
