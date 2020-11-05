@@ -17,36 +17,37 @@
          },
      }
  }
- ```
+```
 
- ## debug_toolbar 사용하기
+## debug_toolbar 사용하기
 
- 1. pip install django-debug-toolbar
+0.  pip install django-debug-toolbar
 
 ### settings.py 설정 변경
 
- 2. INSTALLED_APPS = [
-    'django.contrib.staticfiles',
+```python
+1.  INSTALLED_APPS = [
     'debug_toolbar',
-]
-
- 3. ```python 
-   if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns = + [
-        path('__debug__/', include(debug_toolbar.urls)),
-
-        # For django versions before 2.0:
-        # url(r'^__debug__/', include(debug_toolbar.urls)),
-
     ]
-```
- 4. MIDDLEWARE = [
+
+2. MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
- 5. INTERNAL_IPS = ['127.0.0.1']
+3. INTERNAL_IPS = ('127.0.0.1',) 추가하기
+```
 
+### 프로젝트의 urls.py 설정 변경
 
+```python
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings => 추가
+from django.conf.urls import url => 필요
 
-
+if settings.DEBUG:
+import debug_toolbar
+urlpatterns += [
+url(r'^__debug__/', include(debug_toolbar.urls)),
+]
+```
