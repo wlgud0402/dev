@@ -11,9 +11,6 @@
       {{board.user.id}}, board: 제목:{{board.title}}, 내용:{{board.content}}
     </li>
     <br />
-    {% endfor %}
-    <h1>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ</h1>
-    <!-- {% for board_with_no related in boards_with_no_related %}
-    {{board_with_no related}} {% endfor %} -->
+    {% endfor %} {{boards_with_no_related}}
   </body>
 </html>
