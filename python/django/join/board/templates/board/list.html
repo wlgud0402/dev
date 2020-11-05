@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% for board in boards %}
+    <li>
+      {{board.user.id}}, board: 제목:{{board.title}}, 내용:{{board.content}}
+    </li>
+    <br />
+    {% endfor %}
+    <h1>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ</h1>
+    <!-- {% for board_with_no related in boards_with_no_related %}
+    {{board_with_no related}} {% endfor %} -->
+  </body>
+</html>
